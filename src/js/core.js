@@ -622,6 +622,9 @@
         }
 
         cmdValueArgument = opts && opts.value;
+        if (MediumEditor.Events.prototype.InputEventOnContenteditableSupported) {
+            this.elements[0].focus();
+        }
         return this.options.ownerDocument.execCommand(action, false, cmdValueArgument);
     }
 
